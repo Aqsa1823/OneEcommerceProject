@@ -1,0 +1,114 @@
+[{
+    "email": "dexter@live.com",
+    "name": "dexter",
+    "password": "12345678",
+    "avatar": "https://picsum.photos/800",
+    "expectedStatusCode": 201,
+    "isMessageExpected": false,
+    "validateResponseValues": true,
+    "responseValues": {
+        "email": "dexter@live.com",
+        "name": "dexter",
+        "password": "12345678",
+        "role": "customer",
+        "avatar": "https://picsum.photos/800"
+    }
+},
+{
+    "email": "dexterlive.com",
+    "name": "dexter",
+    "password": "12345678",
+    "avatar": "https://picsum.photos/800",
+    "expectedStatusCode": 400,
+    "isMessageExpected": true,
+    "validateResponseValues": false,
+    "message": [
+        "email must be an email"
+    ],
+    "responseValues": []
+},
+{
+    "email": "",
+    "name": "dexter",
+    "password": "12345678",
+    "avatar": "https://picsum.photos/800",
+    "expectedStatusCode": 400,
+    "isMessageExpected": true,
+    "validateResponseValues": false,
+    "responseValues": [],
+    "message": [
+        "email should not be empty",
+        "email must be an email"
+    ]
+},
+
+{
+    "email": "dexter@live.com",
+    "name": "",
+    "password": "12345678",
+    "avatar": "https://picsum.photos/800",
+    "expectedStatusCode": 400,
+    "isMessageExpected": true,
+    "validateResponseValues": false,
+    "responseValues": [],
+	"message": [
+        "name should not be empty"
+    ] 
+
+},
+
+{
+    "email": "dexter@live.com",
+    "name": "Aqsa",
+    "password": "",
+    "avatar": "https://picsum.photos/800",
+    "expectedStatusCode": 400,
+    "isMessageExpected": true,
+    "validateResponseValues": false,
+    "responseValues": [],
+	"message": [
+                 "password must be longer than or equal to 4 characters",
+        "password should not be empty",
+        "password must contain only letters and numbers"  ] 
+},
+{
+    "email": "dexter@live.com",
+    "name": "Aqsa",
+    "password": "12",
+    "avatar": "https://picsum.photos/800",
+    "expectedStatusCode": 400,
+    "isMessageExpected": true,
+    "validateResponseValues": false,
+    "responseValues": [],
+	"message": [
+        "password must be longer than or equal to 4 characters"
+      
+    ] 
+},
+{
+    "email": "dexter@live.com",
+    "name": "Aqsa",
+    "password": "@##$%",
+    "avatar": "https://picsum.photos/800",
+    "expectedStatusCode": 400,
+    "isMessageExpected": true,
+    "validateResponseValues": false,
+    "responseValues": [],
+	"message": [
+        "password must contain only letters and numbers"
+    ] 
+},
+{
+    "email": "dexter@live.com",
+    "name": "Aqsa",
+    "password": "12435",
+    "avatar": "picsumphotos/800",
+    "expectedStatusCode": 400,
+    "isMessageExpected": true,
+    "validateResponseValues": false,
+    "responseValues": [],
+	"message": [
+        "avatar must be a URL addresss"
+    ] 
+}
+]
