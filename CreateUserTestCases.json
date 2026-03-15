@@ -108,7 +108,7 @@
     "validateResponseValues": false,
     "responseValues": [],
 	"message": [
-        "avatar must be a URL addresss"
+        "avatar must be a URL address"
     ] 
 }
 ]
