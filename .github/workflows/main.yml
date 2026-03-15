@@ -29,4 +29,4 @@ jobs:
           subject: Automation Test Result
           to: aqsa3260@gmail.com
           from: '${{secrets.EMAILUSERNAME}}'
-          attachments: CreateUserTestCases.html
+          attachments: reports/CreateUserTCReports.html
