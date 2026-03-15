@@ -1,0 +1,17 @@
+name: API Tests
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Newman
+        run: npm install -g newman
+
+      - name: Run Tests
+        run: newman run CreateUser.json -d CreateUserTestCases.json 
+        -r htmlextra --reporter-htmlextra-export reports/CreateUserTCReports.html
