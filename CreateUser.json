@@ -21,6 +21,13 @@
               "pm.test(\"response is as expected.\", function(){\r",
               "    var isMessageExpected = pm.iterationData.get(\"isMessageExpected\");\r",
               "    var validateResponseValues = pm.iterationData.get(\"validateResponseValues\");\r",
+              "    var responseData = pm.response.json();\r",
+              "\r",
+              "pm.collectionVariables.set(\"id\",  responseData.id);\r",
+              "pm.collectionVariables.set(\"name\", responseData.name);\r",
+              "pm.collectionVariables.set(\"email\", responseData.email);\r",
+              "pm.collectionVariables.set(\"avatar\", responseData.avatar);\r",
+              "pm.collectionVariables.set(\"password\", responseData.password);\r",
               "\r",
               "    if (isMessageExpected) {\r",
               "        var message = pm.iterationData.get(\"message\");\r",
@@ -46,8 +53,12 @@
         {
           "listen": "prerequest",
           "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
             "packages": {},
-            "type": "text/javascript"
+            "requests": {}
           }
         }
       ],
@@ -87,7 +98,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"email\": \"{{email}}\",\r\n  \"name\": \"{{name}}\",\r\n  \"password\": \"{{password}}\",\r\n  \"avatar\": \"{{avatar}}\"\r\n}",
+              "raw": "{\r\n  \"name\": \"Nicolas\",\r\n  \"email\": \"nico@gmail.com\",\r\n  \"password\": \"1234\",\r\n  \"avatar\": \"picsum.photos/800\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -110,12 +121,40 @@
               ]
             }
           },
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "body": null
+          "_postman_previewlanguage": "",
+          "header": [],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": ""
         }
       ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "id",
+      "value": ""
+    },
+    {
+      "key": "name",
+      "value": ""
+    },
+    {
+      "key": "email",
+      "value": ""
+    },
+    {
+      "key": "avatar",
+      "value": ""
+    },
+    {
+      "key": "password",
+      "value": ""
     }
   ]
 }
