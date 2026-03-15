@@ -1,5 +1,4 @@
 name: API Tests
-
 on: push
 
 jobs:
@@ -13,5 +12,4 @@ jobs:
         run: npm install -g newman
 
       - name: Run Tests
-        run: newman run CreateUser.json -d CreateUserTestCases.json 
-        -r htmlextra --reporter-htmlextra-export reports/CreateUserTCReports.html
+        run: newman run CreateUser.json -d CreateUserTestCases.json -r htmlextra --reporter-htmlextra-export reports/CreateUserTCReports.html
