@@ -1,4 +1,4 @@
-name: API Tests
+name: CreateUser API Tests
 on: push
 
 jobs:
