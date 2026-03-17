@@ -13,7 +13,7 @@ jobs:
       - name: Upload Report
         uses: actions/upload-artifact@v4
         with:
-           name: api-test-report
+           name: CreateUser-report
            path: reports/createUserReport.html
 
   UserByIDtest:
@@ -27,7 +27,7 @@ jobs:
       - name: Upload Report
         uses: actions/upload-artifact@v4
         with:
-           name: api-test-report
+           name: UserByID-report
            path: reports/UserByID.html
       - name: Send results via email
         uses: dawidd6/action-send-mail@v6
