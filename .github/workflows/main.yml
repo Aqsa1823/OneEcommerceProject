@@ -10,25 +10,22 @@ jobs:
         run: npm install -g newman
       - name: Run Tests
         run: newman run CreateUser.json -d CreateUserTestCases.json -r htmlextra --reporter-htmlextra-export reports/createUserReport.html
+        
+      - name: Run UserByID Tests
+        run: newman run UserByID.json -e updated_QAenv.json -r htmlextra --reporter-htmlextra-export reports/UserByID.html
+      
       - name: Upload Report
         uses: actions/upload-artifact@v4
         with:
            name: CreateUser-report
            path: reports/createUserReport.html
-
-  UserByIDtest:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Install Newman
-        run: npm install -g newman
-      - name: Run Tests
-        run: newman run UserByID.json -e updated_QAenv.json -r htmlextra --reporter-htmlextra-export reports/UserByID.html
       - name: Upload Report
         uses: actions/upload-artifact@v4
         with:
            name: UserByID-report
            path: reports/UserByID.html
+
+ 
       - name: Send results via email
         uses: dawidd6/action-send-mail@v6
         with:
@@ -40,6 +37,7 @@ jobs:
           subject: Automation Test Result
           to: aqsa3260@gmail.com
           from: '${{secrets.EMAILUSERNAME}}'
-          attachments: reports/createUserReport.html
-                       reports/UserByID.html
+          attachments: |
+            reports/createUserReport.html
+            reports/UserByID.html
                       
