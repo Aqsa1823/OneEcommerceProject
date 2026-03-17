@@ -135,26 +135,28 @@
       ]
     }
   ],
-  "variable": [
+  "event": [
     {
-      "key": "id",
-      "value": ""
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
     },
     {
-      "key": "name",
-      "value": ""
-    },
-    {
-      "key": "email",
-      "value": ""
-    },
-    {
-      "key": "avatar",
-      "value": ""
-    },
-    {
-      "key": "password",
-      "value": ""
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
     }
   ]
 }

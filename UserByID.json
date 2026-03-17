@@ -17,9 +17,9 @@
               "    var responseData = pm.response.json();",
               "    // Compare GET response with saved values",
               "   ",
-              "    pm.expect(responseData.name).to.eql(pm.collectionVariables.get(\"name\"));",
-              "    pm.expect(responseData.email).to.eql(pm.collectionVariables.get(\"email\"));",
-              "    pm.expect(responseData.avatar).to.eql(pm.collectionVariables.get(\"avatar\"));",
+              "    pm.expect(responseData.name).to.eql(pm.environment.get(\"name\"));",
+              "    pm.expect(responseData.email).to.eql(pm.environment.get(\"email\"));",
+              "    pm.expect(responseData.avatar).to.eql(pm.environment.get(\"avatar\"));",
               "});",
               "",
               "pm.test(\"Response status code is 200\", function () {",
@@ -41,7 +41,7 @@
             "exec": [
               "\r",
               "\r",
-              "pm.collectionVariables.get(\"id\");"
+              "pm.environment.get(\"id\");"
             ],
             "type": "text/javascript",
             "packages": {},
@@ -57,7 +57,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "",
+          "raw": "{\r\n \"userId\": \"{{id}}\"\r\n}",
           "options": {
             "raw": {
               "language": "json"

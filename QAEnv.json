@@ -1,0 +1,118 @@
+{
+	"id": "dfc20f69-b33b-4fd2-8921-eef2bd69c0e9",
+	"name": "QA Environment",
+	"values": [
+		{
+			"key": "BaseUrl",
+			"value": "https://simple-books-api.click",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "AccessToken",
+			"value": "fd204cecb7165e7795512a0478c45e5b5f7502b68253f2a3370afd8e8f983d5a",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "bookId",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "orderId",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "Reqemail",
+			"value": "eve.holt@reqres.in",
+			"type": "default",
+			"enabled": false
+		},
+		{
+			"key": "Reqpassword",
+			"value": "pistol",
+			"type": "secret",
+			"enabled": false
+		},
+		{
+			"key": "ReqUrl",
+			"value": "https://reqres.in/",
+			"type": "default",
+			"enabled": false
+		},
+		{
+			"key": "Api Key",
+			"value": "reqres-free-v1",
+			"type": "secret",
+			"enabled": true
+		},
+		{
+			"key": "name",
+			"value": "Aqsa environment",
+			"type": "secret",
+			"enabled": true
+		},
+		{
+			"key": "accessToken",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "emailAvailable",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "emailcheck",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "firstProductId",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "PlatzBaseUrl",
+			"value": "https://api.escuelajs.co/api/v1/",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "id",
+			"value": 7,
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "email",
+			"value": "nico@gmail.com",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "avatar",
+			"value": "picsum.photos/800",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "password",
+			"value": "1234",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"color": null,
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2026-03-17T21:50:06.450Z",
+	"_postman_exported_using": "Postman/12.1.4"
+}

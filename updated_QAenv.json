@@ -1,0 +1,104 @@
+{
+  "_": {
+    "postman_variable_scope": "environment",
+    "postman_exported_at": "2026-03-17T21:50:06.450Z",
+    "postman_exported_using": "Postman/12.1.4"
+  },
+  "id": "dfc20f69-b33b-4fd2-8921-eef2bd69c0e9",
+  "name": "QA Environment",
+  "values": [
+    {
+      "type": "any",
+      "value": "https://simple-books-api.click",
+      "key": "BaseUrl"
+    },
+    {
+      "type": "any",
+      "value": "fd204cecb7165e7795512a0478c45e5b5f7502b68253f2a3370afd8e8f983d5a",
+      "key": "AccessToken"
+    },
+    {
+      "type": "any",
+      "value": "",
+      "key": "bookId"
+    },
+    {
+      "type": "any",
+      "value": "",
+      "key": "orderId"
+    },
+    {
+      "type": "any",
+      "value": "eve.holt@reqres.in",
+      "key": "Reqemail"
+    },
+    {
+      "type": "any",
+      "value": "pistol",
+      "key": "Reqpassword"
+    },
+    {
+      "type": "any",
+      "value": "https://reqres.in/",
+      "key": "ReqUrl"
+    },
+    {
+      "type": "any",
+      "value": "reqres-free-v1",
+      "key": "Api Key"
+    },
+    {
+      "type": "any",
+      "value": "dexter",
+      "key": "name"
+    },
+    {
+      "type": "any",
+      "value": "",
+      "key": "accessToken"
+    },
+    {
+      "type": "any",
+      "value": "",
+      "key": "emailAvailable"
+    },
+    {
+      "type": "any",
+      "value": "",
+      "key": "emailcheck"
+    },
+    {
+      "type": "any",
+      "value": "",
+      "key": "firstProductId"
+    },
+    {
+      "type": "any",
+      "value": "https://api.escuelajs.co/api/v1/",
+      "key": "PlatzBaseUrl"
+    },
+    {
+      "type": "any",
+      "value": 212,
+      "key": "id"
+    },
+    {
+      "type": "any",
+      "value": "dexter@live.com",
+      "key": "email"
+    },
+    {
+      "type": "any",
+      "value": "https://picsum.photos/800",
+      "key": "avatar"
+    },
+    {
+      "type": "any",
+      "value": "12345678",
+      "key": "password"
+    }
+  ],
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2026-03-17T22:15:01.634Z",
+  "_postman_exported_using": "Newman/6.2.1"
+}

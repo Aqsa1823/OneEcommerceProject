@@ -1,19 +1,4 @@
-[{
-    "email": "dexter@live.com",
-    "name": "dexter",
-    "password": "12345678",
-    "avatar": "https://picsum.photos/800",
-    "expectedStatusCode": 201,
-    "isMessageExpected": false,
-    "validateResponseValues": true,
-    "responseValues": {
-        "email": "dexter@live.com",
-        "name": "dexter",
-        "password": "12345678",
-        "role": "customer",
-        "avatar": "https://picsum.photos/800"
-    }
-},
+[
 {
     "email": "dexterlive.com",
     "name": "dexter",
@@ -110,5 +95,21 @@
 	"message": [
         "avatar must be a URL address"
     ] 
+},
+{
+    "email": "dexter@live.com",
+    "name": "dexter",
+    "password": "12345678",
+    "avatar": "https://picsum.photos/800",
+    "expectedStatusCode": 201,
+    "isMessageExpected": false,
+    "validateResponseValues": true,
+    "responseValues": {
+        "email": "dexter@live.com",
+        "name": "dexter",
+        "password": "12345678",
+        "role": "customer",
+        "avatar": "https://picsum.photos/800"
+    }
 }
 ]
