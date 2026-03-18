@@ -21,6 +21,7 @@
               "    pm.expect(responseData.email).to.eql(pm.environment.get(\"email\"));",
               "    pm.expect(responseData.avatar).to.eql(pm.environment.get(\"avatar\"));",
               "});",
+              "console.log(\"User ID:\", pm.environment.get(\"id\"));",
               "",
               "pm.test(\"Response status code is 200\", function () {",
               "    pm.expect(pm.response.code).to.eql(200);",
@@ -39,9 +40,8 @@
           "listen": "prerequest",
           "script": {
             "exec": [
-              "\r",
-              "\r",
-              "pm.environment.get(\"id\");"
+              "pm.environment.get(\"id\");\r",
+              "console.log(\"User ID:\", pm.environment.get(\"id\"));"
             ],
             "type": "text/javascript",
             "packages": {},
