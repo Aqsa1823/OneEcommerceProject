@@ -1,0 +1,89 @@
+{
+  "info": {
+    "_postman_id": "be582fcd-4a4c-4b23-98f3-63ce9046fdc8",
+    "name": "UpdateUser",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "12115995"
+  },
+  "item": [
+    {
+      "name": "UpdateUser",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "pm.environment.set(\"email\", `user_${Math.floor(Math.random()*100)}@test.com`);\r",
+              "pm.environment.set(\"name\", `User_${Math.floor(Math.random()*10000)}`);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "",
+              "pm.test(\"Response status code is 200\", function () {",
+              "    pm.expect(pm.response.code).to.equal(200);",
+              "});",
+              "",
+              "pm.test(\"User updated successfully\", function ()",
+              " { var ResponseData= pm.response.json();    ",
+              " var reqName = JSON.parse(pm.request.body.raw);",
+              " var UpdatedName = reqName.name;",
+              "var UpdatedEmail = reqName.email;",
+              "  pm.expect(ResponseData.name).to.eql(UpdatedName);",
+              "    pm.expect(ResponseData.email).to.eql(UpdatedEmail);",
+              "    ",
+              "  // Save updated value ",
+              "  pm.environment.set(\"name\", UpdatedName);",
+              "  pm.environment.set(\"email\", UpdatedEmail);",
+              "   });",
+              "pm.test(\"Updated user data is correct\", function () {",
+              "    var responseData = pm.response.json();",
+              "    pm.expect(responseData.name).to.eql(pm.environment.get(\"name\"));",
+              "       pm.expect(responseData.email).to.eql(pm.environment.get(\"email\"));",
+              "});",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"{{email}}\",\r\n  \"name\": \"{{name}}\"\r\n  \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{PlatzBaseUrl}}users/:id",
+          "host": [
+            "{{PlatzBaseUrl}}users"
+          ],
+          "path": [
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "{{id}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
