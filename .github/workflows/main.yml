@@ -16,6 +16,9 @@ jobs:
       - name: Run UserByID Tests
 
         run: newman run UserByID.json -e UpdatedQAenv.json -r htmlextra --reporter-htmlextra-export reports/UserByID.html
+
+      - name: Run UpdateUser Tests
+        run: newman run UpdateUser.json -e UpdatedQAenv.json -r htmlextra --reporter-htmlextra-export reports/UpdateUser.html
       
       - name: Upload Report
         uses: actions/upload-artifact@v4
@@ -27,6 +30,12 @@ jobs:
         with:
            name: UserByID-report
            path: reports/UserByID.html
+
+      - name: Upload Report
+        uses: actions/upload-artifact@v4
+        with:
+           name: UpdateUser-report
+           path: reports/UpdateUser.html
 
  
       - name: Send results via email
@@ -43,4 +52,5 @@ jobs:
           attachments: |
             reports/createUserReport.html
             reports/UserByID.html
+            reports/UpdateUser.html
                       
