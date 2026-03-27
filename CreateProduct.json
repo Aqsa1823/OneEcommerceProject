@@ -1,0 +1,154 @@
+{
+  "info": {
+    "_postman_id": "f9001723-195b-43f6-b893-6709715e977d",
+    "name": "CreateProduct",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "12115995"
+  },
+  "item": [
+    {
+      "name": "CreateProduct",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "let categoryId = pm.environment.get(\"categoryId\");\r",
+              "console.log(categoryId);\r",
+              "let baseTitle = pm.iterationData.get(\"title\") || \"TestingProduct\";\r",
+              "console.log(\"1:\", baseTitle);\r",
+              "let isNegative = pm.iterationData.get(\"isNegative\");\r",
+              "console.log(\"2:\", isNegative);\r",
+              "if(isNegative) \r",
+              "{\r",
+              "    console.log(\"5:\", isNegative);\r",
+              "    pm.environment.set(\"title\", baseTitle);\r",
+              "    console.log(\"6\", baseTitle);\r",
+              "}\r",
+              "else\r",
+              "{\r",
+              "let uniqueTitle = `${baseTitle}_${Math.random().toString(36).substring(2,6).toUpperCase()}`;\r",
+              "console.log(\"3:\", uniqueTitle);\r",
+              "pm.environment.set(\"title\", uniqueTitle);\r",
+              "console.log(\"4:\", uniqueTitle);\r",
+              "console.log(\"Final Title:\", pm.environment.get(\"title\"));\r",
+              "\r",
+              "}\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let res = pm.response.json();\r",
+              "\r",
+              "if (pm.info.iteration === 0) {\r",
+              "    pm.environment.set(\"firstProductId\", res.id);\r",
+              "\r",
+              "}\r",
+              "pm.test(\"Status code is expected\", function () {\r",
+              "    var IsResponseCode=  pm.iterationData.get(\"IsResponseCode\");\r",
+              "    pm.expect(pm.response.code).to.eql(IsResponseCode);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response time is less than expected\", function () {\r",
+              "    let IsResponseTime = pm.iterationData.get(\"IsResponseTime\"); \r",
+              "    let timeLimit = parseInt(IsResponseTime);\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"response is as expected.\", function(){\r",
+              "    var isMessageExpected = pm.iterationData.get(\"isMessageExpected\");\r",
+              "    var validateResponseValues = pm.iterationData.get(\"validateResponseValues\");\r",
+              "    var TestCaseDes = pm.iterationData.get(\"TestCaseDes\");\r",
+              "\r",
+              "    pm.test(\"Test Case Title \" + TestCaseDes, function () {});\r",
+              " if (isMessageExpected) {\r",
+              "        var message = pm.iterationData.get(\"Ismsg\");\r",
+              "        pm.expect(message).to.eql(pm.response.json().message);\r",
+              "\r",
+              "    }\r",
+              "    if (validateResponseValues) {\r",
+              "         var responseValues = pm.iterationData.get(\"IsResponseValues\");\r",
+              "         var getTitle = pm.environment.get(\"title\");\r",
+              "         var responsetitle = pm.response.json().title;\r",
+              "        pm.expect(getTitle).to.eql(responsetitle);\r",
+              "        var getcatid = pm.environment.get(\"categoryId\");\r",
+              "        var catkey = pm.response.json().category.id;\r",
+              "        pm.expect(getcatid).to.eql(catkey);\r",
+              "        var keys = Object.keys(responseValues);\r",
+              "        keys.forEach(function (item) {\r",
+              "            pm.expect(responseValues[item], item + \" is expected to be '\" + responseValues[item] + \"' but got this '\"+(pm.response.json())[item]+\"'\").to.eql((pm.response.json())[item]);\r",
+              "        }); \r",
+              "    }\r",
+              "});\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"{{title}}\",\r\n  \"price\": {{price}},\r\n  \"description\": \"{{description}}\",\r\n  \"categoryId\": {{categoryId}},\r\n  \"images\": [\"{{images}}\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{PlatzBaseUrl}}products",
+          "host": [
+            "{{PlatzBaseUrl}}products"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "CreateProduct",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"euwfhweh\",\r\n  \"price\": 10,\r\n  \"description\": \"A description\",\r\n  \"categoryId\": 1,\r\n  \"images\": [\"https://placehold.co/600x400\"]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{PlatzBaseUrl}}products",
+              "host": [
+                "{{PlatzBaseUrl}}products"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "",
+          "header": [],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "_": {
     "postman_variable_scope": "environment",
-    "postman_exported_at": "2026-03-24T14:06:57.670Z",
-    "postman_exported_using": "Postman/12.2.2"
+    "postman_exported_at": "2026-03-26T22:52:37.658Z",
+    "postman_exported_using": "Postman/12.3.5"
   },
   "id": "dfc20f69-b33b-4fd2-8921-eef2bd69c0e9",
   "name": "QA Environment",
@@ -49,7 +49,7 @@
     },
     {
       "type": "any",
-      "value": "dexter",
+      "value": "Aqsa environment",
       "key": "name"
     },
     {
@@ -79,26 +79,51 @@
     },
     {
       "type": "any",
-      "value": 65,
+      "value": 7,
       "key": "id"
     },
     {
       "type": "any",
-      "value": "dexter@live.com",
+      "value": "nico@gmail.com",
       "key": "email"
     },
     {
       "type": "any",
-      "value": "https://picsum.photos/800",
+      "value": "picsum.photos/800",
       "key": "avatar"
     },
     {
       "type": "any",
-      "value": "12345678",
+      "value": "1234",
       "key": "password"
+    },
+    {
+      "type": "any",
+      "value": "Categoryis_aly2ae",
+      "key": "CategoryName"
+    },
+    {
+      "type": "any",
+      "value": 72,
+      "key": "categoryId"
+    },
+    {
+      "type": "any",
+      "value": "",
+      "key": "title"
+    },
+    {
+      "type": "any",
+      "value": "",
+      "key": "firstProductId"
+    },
+    {
+      "type": "any",
+      "value": "Category_huv0ob",
+      "key": "UpdatedCategoryName"
     }
   ],
   "_postman_variable_scope": "environment",
-  "_postman_exported_at": "2026-03-24T16:04:02.457Z",
+  "_postman_exported_at": "2026-03-27T13:48:43.192Z",
   "_postman_exported_using": "Newman/6.2.1"
 }

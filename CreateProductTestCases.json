@@ -1,0 +1,198 @@
+[{
+  "price": 10,
+  "description": "First TestCase",
+ 
+  "images": ["https://placehold.co/600x400"],
+"TestCaseDes" : "ValidDetails",
+"IsResponseCode": 201,
+"IsResponseTime" : "1000",
+"Ismsg" : false ,
+"validateResponseValues": true,
+"isNegative": false,
+"IsResponseValues": {
+  "price": 10,
+  "description": "First TestCase",
+  "images":  ["https://placehold.co/600x400"]
+}
+},
+
+{
+  
+  "price": 10,
+  "description": "First TestCase",
+ 
+  "images": ["https://placehold.co/600x400","https://placehold.co/600x400","https://placehold.co/600x400"],
+"TestCaseDes" : "Multiple Images",
+"IsResponseCode": 201,
+"IsResponseTime" : "1000",
+"Ismsg" : false ,
+"validateResponseValues": true,
+"isNegative": false,
+"IsResponseValues": {
+  "price": 10,
+  "description": "First TestCase",
+  "images":  ["https://placehold.co/600x400","https://placehold.co/600x400","https://placehold.co/600x400"]
+}
+},
+{
+  "title": "Furniture product",
+  "price": 10,
+  "description": "First TestCase",
+  "categoryId": 1,
+  "images": ["https://placehold.co/600x400"],
+"TestCaseDes" : "Duplicate Title",
+"IsResponseCode": 400,
+"IsResponseTime" : "1000",
+"Ismsg" : true,
+"isNegative" : true,
+"validateResponseValues":false,
+ "message": [
+       "SqliteError: UNIQUE constraint failed: product.slug"
+    ],
+    "responseValues": []
+},
+
+{
+  "title": "",
+  "price": 10,
+  "description": "First TestCase",
+  "categoryId": 1,
+  "images": ["https://placehold.co/600x400"],
+"TestCaseDes" : "Empty Title Field",
+"IsResponseCode": 400,
+"IsResponseTime" : "1000",
+"Ismsg" : true,
+"isNegative" : true,
+"validateResponseValues":false,
+ "message": [
+      "title should not be empty"
+    ],
+    "responseValues": []
+},
+
+{
+  "title": "Chairs product",
+  "price": "ab",
+  "description": "First TestCase",
+  "categoryId": 1,
+  "images": ["https://placehold.co/600x400"],
+"TestCaseDes" : "Price in string",
+"IsResponseCode": 400,
+"IsResponseTime" : "1000",
+"Ismsg" : true,
+"isNegative" : false,
+"validateResponseValues":false,
+ "message": [
+      "price must be a positive number"
+    ],
+    "responseValues": []
+},
+{
+  "title": "Chairs product",
+  "price": "",
+  "description": "First TestCase",
+  "categoryId": 1,
+  "images": ["https://placehold.co/600x400"],
+"TestCaseDes" : "Price value null",
+"IsResponseCode": 400,
+"IsResponseTime" : "1000",
+"Ismsg" : true,
+"isNegative" : false,
+"validateResponseValues":false,
+ "message": [
+      "price must be a positive number"
+    ],
+    "responseValues": []
+},
+
+{
+  "title": "Chairs product",
+  "price": "@#%&",
+  "description": "First TestCase",
+  "categoryId": 1,
+  "images": ["https://placehold.co/600x400"],
+"TestCaseDes" : "Price value as special Characters",
+"IsResponseCode": 400,
+"IsResponseTime" : "1000",
+"Ismsg" : true,
+"isNegative" : false,
+"validateResponseValues":false,
+ "message": [
+      "price must be a positive number"
+    ],
+    "responseValues": []
+},
+
+{
+  "title": "Chairs product",
+  "price": 12,
+  "description": "",
+  "categoryId": 1,
+  "images": ["https://placehold.co/600x400"],
+"TestCaseDes" : "Description field null",
+"IsResponseCode": 400,
+"IsResponseTime" : "1000",
+"Ismsg" : true,
+"isNegative" : false,
+"validateResponseValues":false,
+ "message": [
+     "description should not be empty"
+    ],
+    "responseValues": []
+},
+
+{
+  "title": "Chairs product",
+  "price": 12,
+  "description": "FRYUIH",
+  "categoryId": 256,
+  "images": ["https://placehold.co/600x400"],
+"TestCaseDes" : "Category Does not Exist",
+"IsResponseCode": 400,
+"IsResponseTime" : "1000",
+"Ismsg" : true,
+"isNegative" : false,
+"validateResponseValues":false,
+ "message": [
+     "Could not find any entity of type \"Category\" matching: {\n    \"id\": 2890\n}"
+    ],
+    "responseValues": []
+},
+
+
+{
+  "title": "Chairs product",
+  "price": 12,
+  "description": "FRYUIH",
+  "categoryId": 256,
+  "images": [""],
+"TestCaseDes" : "Image Value Null",
+"IsResponseCode": 400,
+"IsResponseTime" : "1000",
+"Ismsg" : true,
+"isNegative" : false,
+"validateResponseValues":false,
+ "message": [
+     "each value in images must be a URL address"
+    ],
+    "responseValues": []
+},
+
+{
+  "title": "Chairs product",
+  "price": 12,
+  "description": "FRYUIH",
+  "categoryId": 256,
+  "images": ["abc"],
+"TestCaseDes" : "Image Value as String",
+"IsResponseCode": 400,
+"IsResponseTime" : "1000",
+"Ismsg" : true,
+"isNegative" : false,
+"validateResponseValues":false,
+ "message": [
+     "each value in images must be a URL address"
+    ],
+    "responseValues": []
+}
+]
