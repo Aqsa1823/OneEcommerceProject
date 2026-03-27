@@ -1,0 +1,49 @@
+name: CategorandProduct API Tests
+on: 
+ push:
+    branches: ["QA"]
+ pull_request:
+    branches: ["QA"]
+
+
+jobs:
+  CreateCategoryandProductAPITest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Newman
+        run: npm install -g newman
+      - name: Install Reporter
+        run: npm install -g newman-reporter-htmlextra
+      - name: Run Category Tests
+        run: newman run CateogryCollection.json -e QAEnv.json --export-environment UpdatedQAenv.json -r htmlextra --reporter-htmlextra-export reports/createCategory.html
+      - name: Run Product Tests
+
+        run: newman run CreateProduct.json -d CreateProductTestCases.json -e UpdatedQAenv.json -r htmlextra --reporter-htmlextra-export reports/createProduct.html
+      
+      - name: Upload Report
+        uses: actions/upload-artifact@v4
+        with:
+           name: CreateCat-report
+           path: reports/createCategory.html
+      - name: Upload Report
+        uses: actions/upload-artifact@v4
+        with:
+           name: CreateProduct-report
+           path: reports/createProduct.html
+
+      - name: Send results via email
+        uses: dawidd6/action-send-mail@v6
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: '${{secrets.EMAILUSERNAME}}'
+          password: '${{secrets.EMAILPASSWORD}}'
+          subject: Automation Test Result
+          to: aqsa3260@gmail.com
+          from: '${{secrets.EMAILUSERNAME}}'
+          attachments: |
+            reports/createCategory.html
+            reports/createProduct.html
+                      
